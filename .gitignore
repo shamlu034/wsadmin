@@ -16,3 +16,7 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+nohup.out
+vendor
+composer.lock
+socket/main
