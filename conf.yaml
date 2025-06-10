@@ -1,0 +1,9 @@
+host: https://3wesc.cc
+redis_server_ip: '127.0.0.1'
+redis_passwd: '325511.Nn'
+redis_port: '6379'
+mongodb_server_ip: '127.0.0.1'
+mongodb_port: '27017'
+mongodb_passwd: 'nUi8x8AYnqIpk16R'
+cache_dir: './cache/%s'
+is_local: true

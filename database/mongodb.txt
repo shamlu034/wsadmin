@@ -1,0 +1,929 @@
+//bank
+db.bank.insertMany([
+{
+   "account_holder": "李四",
+   "bank_deposit": "中国建设银行",
+   "bank_card": "6217001234567891",
+   "branch_name": "上海浦东支行",
+        "bank_address": "上海市浦东新区世纪大道88号",
+   "bank_address": "上海市浦东新区世纪大道88号",
+    "bank_code": "CCB",
+   "family_address": "上海市徐汇区宜山路666号",
+    "status": 1,
+   "created_at": { "$date": "2024-06-03T09:00:00Z" },
+    "updated_at": { "$date": "2024-06-04T09:00:00Z" },
+    "user_id": 10002,
+    "weight": 20
+  },
+  {
+    "account_holder": "王五",
+    "bank_deposit": "中国银行",
+   "bank_card": "6216609876543210",
+    "branch_name": "广州天河支行",
+     "bank_address": "广州市天河区体育西路189号",
+    "bank_code": "BOC",
+    "bank_code": "BOC",
+    "family_address": "广东省广州市白云区机场路123号",
+     "status": 2,
+     "created_at": { "$date": "2024-06-05T11:00:00Z" },
+   "updated_at": { "$date": "2024-06-05T11:30:00Z" },
+   "user_id": 10003,
+    "weight": 30
+  }
+ ]
+);
+
+//banner
+db.banner.insertMany([
+{
+  "target_url": "https://example.com/promo1",
+  "img_url": "https://cdn.example.com/images/banner1.jpg",
+  "status": 1,
+  "created_at": { "$date": "2024-06-01T08:00:00Z" },
+  "updated_at": { "$date": "2024-06-01T08:00:00Z" },
+  "end_time": 0,
+  "weight": 10,
+  "remark": "首页顶部广告",
+  "type": "home_top"
+},
+{
+  "target_url": "https://example.com/sale",
+  "img_url": "https://cdn.example.com/images/sale.jpg",
+  "status": 1,
+  "created_at": { "$date": "2024-05-01T12:00:00Z" },
+  "updated_at": { "$date": "2024-06-01T10:00:00Z" },
+  "end_time": 1717958400,
+  "weight": 5,
+  "remark": "限时促销横幅",
+  "type": "promo"
+},
+{
+  "target_url": "https://example.com/deprecated",
+  "img_url": "https://cdn.example.com/images/old_banner.jpg",
+  "status": 0,
+  "created_at": { "$date": "2023-12-01T10:00:00Z" },
+  "updated_at": { "$date": "2024-01-01T10:00:00Z" },
+  "end_time": 0,
+  "weight": 1,
+  "remark": "旧活动已下架",
+  "type": "archive"
+}
+]);
+
+//chat
+db.chat.insertMany([
+{
+  "name": "系统客服",
+  "uid": "chat_001",
+  "token": "sys_token_abc123",
+  "device_flag": "web",
+  "device_level": "high",
+  "status": 1,
+  "created_at": ISODate( "2024-06-01T10:00:00Z" ),
+  "updated_at": ISODate( "2024-06-01T10:00:00Z" ),
+  "end_time": 0,
+  "type": 1,
+  "language": "zh",
+  "first_text": "您好，我是您的专属客服，有什么可以帮您？",
+  "ip": "192.168.1.10",
+  "first_img": "https://cdn.example.com/img/welcome.png",
+  "second_text": "请问您遇到了什么问题？",
+  "second_img": "https://cdn.example.com/img/ask.png",
+  "second_ios_img" : "https://cdn.example.com/img/askios.png",
+  "three_text": "请您输入手机号以继续。",
+  "code_text": "验证码已发送，请查收。",
+  "logout_text": "您已成功退出，如需帮助请随时联系。",
+  "login_success_text": "登录成功，欢迎回来！",
+  "error_text": "手机号格式有误，请重新输入。"
+},
+{
+  "name": "用户小李",
+  "uid": "chat_002",
+  "token": "user_token_xyz456",
+  "device_flag": "android",
+  "device_level": "mid",
+  "status": 1,
+  "created_at": ISODate( "2024-06-08T09:30:00Z" ),
+  "updated_at": ISODate(  "2024-06-08T09:45:00Z" ),
+  "end_time": 0,
+  "type": 2,
+  "language": "zh",
+  "first_text": "你好，我需要帮助。",
+  "ip": "203.0.113.55",
+  "first_img": "",
+  "second_text": "我找不到绑定银行卡的入口。",
+  "second_img": "",
+  "second_ios_img" : "https://cdn.example.com/img/askios.png",
+  "three_text": "手机号是：13800000000",
+  "code_text": "验证码是：123456",
+  "logout_text": "再见，已退出。",
+  "login_success_text": "登录成功！",
+  "error_text": "手机号错误"
+},
+{
+  "name": "用户小张",
+  "uid": "chat_003",
+  "token": "user_token_003",
+  "device_flag": "ios",
+  "device_level": "mid",
+  "status": 1,
+  "created_at": ISODate(  "2024-06-08T09:30:00Z" ),
+  "updated_at": ISODate( "2024-06-08T09:45:00Z" ),
+  "end_time": 0,
+  "type": 1,
+  "language": "zh",
+  "first_text": "你好，我需要帮助。",
+  "ip": "203.0.113.66",
+  "first_img": "",
+  "second_text": "我找不到绑定银行卡的入口。",
+  "second_img": "",
+  "second_ios_img" : "https://cdn.example.com/img/askios.png",
+  "three_text": "手机号是：13800000000",
+  "code_text": "验证码是：12456",
+  "logout_text": "再见，已退出。",
+  "login_success_text": "登录成功！",
+  "error_text": "手机号错误"
+}
+]);
+
+
+//checkinlog
+db.check_in_log.insertMany([
+{
+  "check_in_id": "ci_20240610_001",
+  "user_id": 10001,
+  "check_in_time": ISODate(  "2024-06-10T08:30:00Z" ),
+  "created_at": ISODate(  "2024-06-10T08:30:00Z" ),
+  "updated_at": ISODate(  "2024-06-10T08:30:00Z" ),
+  "insert_time": ISODate(  "2024-06-10T08:30:01Z" )
+},
+{
+  "check_in_id": "ci_20240610_001",
+  "user_id": 10002,
+  "check_in_time": ISODate(  "2024-06-10T09:15:00Z" ),
+  "created_at": ISODate(  "2024-06-10T09:15:00Z"),
+  "updated_at": ISODate(  "2024-06-10T09:15:00Z" ),
+  "insert_time": ISODate(  "2024-06-10T09:15:01Z" )
+},
+{
+  "check_in_id": "ci_20240501_001",
+  "user_id": 10001,
+  "check_in_time": ISODate(  "2024-05-01T07:50:00Z" ),
+  "created_at": ISODate(  "2024-05-01T07:50:00Z" ),
+  "updated_at": ISODate(  "2024-05-01T07:50:00Z" ),
+  "insert_time": ISODate(  "2024-05-01T07:50:01Z" )
+}
+]);
+
+//contest_bananer
+db.contest_banner.insertMany([
+  {
+    "target_url": "https://example.com/contest1",
+    "img_url": "https://picsum.photos/800/400?random=1",
+    "status": 1,
+    "created_at": ISODate(  "2023-01-15T10:00:00Z" ),
+    "updated_at": ISODate(  "2023-01-15T10:00:00Z" ),
+    "end_time": 1676304000,
+    "weight": 5,
+    "remark": "春节特别活动",
+    "type": "holiday",
+    "nature": 1
+  },
+  {
+    "target_url": "https://example.com/promo2",
+    "img_url": "https://picsum.photos/800/400?random=2",
+    "status": 0,
+    "created_at": ISODate(  "2023-02-20T14:30:00Z" ),
+    "updated_at": ISODate(  "2023-02-20T14:30:00Z" ),
+    "end_time": 1679485800,
+    "weight": 3,
+    "remark": "限时折扣",
+    "type": "promotion",
+    "nature": 2
+  },
+  {
+    "target_url": "https://example.com/event3",
+    "img_url": "https://picsum.photos/800/400?random=3",
+    "status": 1,
+    "created_at": ISODate(  "2023-03-10T09:15:00Z" ),
+    "updated_at": ISODate(  "2023-03-10T09:15:00Z" ),
+    "end_time": 0,
+    "weight": 8,
+    "remark": "长期活动",
+    "type": "permanent",
+    "nature": 1
+  }
+]);
+
+//customer
+db.customer.insertMany([
+  {
+    admin_id: 1,
+    uid: "uuid-7890",
+    token: "token-def789",
+    created_at: ISODate(),
+    updated_at: ISODate(),
+    chat_id: "6848175fed69e073e15d9479"
+  },
+  {
+    admin_id: 4,
+    uid: "uuid-4561",
+    token: "token-def4561",
+    created_at: ISODate(),
+    updated_at: ISODate(),
+    chat_id: "6848175fed69e073e15d9479"
+  },
+  {
+    admin_id: 2,
+    uid: "uuid-67890",
+    token: "token-def456",
+    created_at: ISODate(),
+    updated_at: ISODate(),
+    chat_id: "6848175fed69e073e15d947a"
+  },
+  {
+    admin_id: 3,
+    uid: "uuid-54321",
+    token: "token-ghi789",
+    created_at: ISODate(),
+    updated_at: ISODate(),
+    chat_id: "6848175fed69e073e15d947a"
+  }
+]);
+
+//email_code
+db.email_code.insertMany([
+    {
+        "email": "user1@example.com",
+        "v_code": "A7B9C2",
+        "created_at": new Date("2023-06-10T10:00:00Z"),
+        "updated_at": new Date("2023-06-10T10:00:00Z"),
+        "end_time": new Date("2023-06-10T10:05:00Z")  // 5分钟后过期
+    },
+    {
+        "email": "user2@example.com",
+        "v_code": "D3E5F8",
+        "created_at": new Date("2023-06-10T11:30:00Z"),
+        "updated_at": new Date("2023-06-10T11:30:00Z"),
+        "end_time": new Date("2023-06-10T11:35:00Z")  // 5分钟后过期
+    },
+    {
+        "email": "user3@example.com",
+        "v_code": "G1H4J6",
+        "created_at": new Date("2023-06-10T14:15:00Z"),
+        "updated_at": new Date("2023-06-10T14:15:00Z"),
+        "end_time": new Date("2023-06-10T14:20:00Z")  // 5分钟后过期
+    },
+    {
+        "email": "user4@example.com",
+        "v_code": "K7L2M9",
+        "created_at": new Date("2023-06-10T16:45:00Z"),
+        "updated_at": new Date("2023-06-10T16:45:00Z"),
+        "end_time": new Date("2023-06-10T16:50:00Z")  // 5分钟后过期
+    },
+    // 已过期的验证码
+    {
+        "email": "user5@example.com",
+        "v_code": "N3P5Q8",
+        "created_at": new Date("2023-06-09T09:00:00Z"),
+        "updated_at": new Date("2023-06-09T09:00:00Z"),
+        "end_time": new Date("2023-06-09T09:05:00Z")  // 已过期
+    },
+    // 用于测试的验证码
+    {
+        "email": "test@example.com",
+        "v_code": "123456",
+        "created_at": new Date(),
+        "updated_at": new Date(),
+        "end_time": new Date(Date.now() + 300000)  // 当前时间+5分钟
+    }
+]);
+
+//exchange_rate
+db.exchange_rate.insertMany([
+    {
+        "name": "美元汇率",
+        "nation_code": "USD",
+        "diamond_quantity": 100,
+        "status": 1,
+        "created_at": new Date("2023-06-01T09:00:00Z"),
+        "updated_at": new Date("2023-06-01T09:00:00Z")
+    },
+    {
+        "name": "人民币汇率",
+        "nation_code": "CNY",
+        "diamond_quantity": 10,
+        "status": 1,
+        "created_at": new Date("2023-06-01T09:05:00Z"),
+        "updated_at": new Date("2023-06-01T09:05:00Z")
+    },
+    {
+        "name": "欧元汇率",
+        "nation_code": "EUR",
+        "diamond_quantity": 120,
+        "status": 1,
+        "created_at": new Date("2023-06-01T09:10:00Z"),
+        "updated_at": new Date("2023-06-01T09:10:00Z")
+    },
+    {
+        "name": "日元汇率",
+        "nation_code": "JPY",
+        "diamond_quantity": 0.9,
+        "status": 0,
+        "created_at": new Date("2023-06-01T09:15:00Z"),
+        "updated_at": new Date("2023-06-01T09:15:00Z")
+    },
+    {
+        "name": "英镑汇率",
+        "nation_code": "GBP",
+        "diamond_quantity": 130,
+        "status": 1,
+        "created_at": new Date("2023-06-01T09:20:00Z"),
+        "updated_at": new Date("2023-06-01T09:20:00Z")
+    },
+    {
+        "name": "韩元汇率",
+        "nation_code": "KRW",
+        "diamond_quantity": 0.08,
+        "status": 1,
+        "created_at": new Date("2023-06-01T09:25:00Z"),
+        "updated_at": new Date("2023-06-01T09:25:00Z")
+    },
+    {
+        "name": "港币汇率",
+        "nation_code": "HKD",
+        "diamond_quantity": 12,
+        "status": 1,
+        "created_at": new Date("2023-06-01T09:30:00Z"),
+        "updated_at": new Date("2023-06-01T09:30:00Z")
+    }
+]);
+
+//fry
+db.fry.insertMany([
+    {
+        "admin_id": ObjectId("507f1f77bcf86cd799439011"),
+        "language": "zh-CN",
+        "status": 1,
+        "uid": 100001,
+        "phone_number": "13800138001",
+        "remark": "优质客户，需要重点跟进",
+        "bg_img_url": "https://example.com/images/bg1.jpg",
+        "nick_name": "鱼苗1号",
+        "created_at": new Date("2023-06-01T10:00:00Z"),
+        "updated_at": new Date("2023-06-01T10:00:00Z")
+    },
+    {
+        "admin_id": ObjectId("507f1f77bcf86cd799439012"),
+        "language": "en-US",
+        "status": 0,
+        "uid": 100002,
+        "phone_number": "13800138002",
+        "remark": "新注册用户，尚未登录",
+        "bg_img_url": "https://example.com/images/bg2.jpg",
+        "nick_name": "Fish002",
+        "created_at": new Date("2023-06-02T11:30:00Z"),
+        "updated_at": new Date("2023-06-02T11:30:00Z")
+    },
+    {
+        "admin_id": ObjectId("507f1f77bcf86cd799439013"),
+        "language": "ja-JP",
+        "status": 1,
+        "uid": 100003,
+        "phone_number": "13800138003",
+        "remark": "日本用户，需要日语支持",
+        "bg_img_url": "https://example.com/images/bg3.jpg",
+        "nick_name": "魚の子003",
+        "created_at": new Date("2023-06-03T09:15:00Z"),
+        "updated_at": new Date("2023-06-03T09:15:00Z")
+    },
+    {
+        "admin_id": ObjectId("507f1f77bcf86cd799439014"),
+        "language": "zh-CN",
+        "status": 1,
+        "uid": 100004,
+        "phone_number": "13800138004",
+        "remark": "活跃用户，经常参与活动",
+        "bg_img_url": "https://example.com/images/bg4.jpg",
+        "nick_name": "小鱼儿",
+        "created_at": new Date("2023-06-04T14:20:00Z"),
+        "updated_at": new Date("2023-06-04T14:20:00Z")
+    },
+    {
+        "admin_id": ObjectId("507f1f77bcf86cd799439015"),
+        "language": "ko-KR",
+        "status": 0,
+        "uid": 100005,
+        "phone_number": "13800138005",
+        "remark": "韩国用户，需要韩语客服",
+        "bg_img_url": "https://example.com/images/bg5.jpg",
+        "nick_name": "물고기005",
+        "created_at": new Date("2023-06-05T16:45:00Z"),
+        "updated_at": new Date("2023-06-05T16:45:00Z")
+    }
+]);
+
+//message
+db.message.insertMany([
+    {
+        "title": "系统维护通知",
+        "remark": "系统将于本周六凌晨2点至4点进行维护升级，请提前做好工作安排。",
+        "created_at": new Date("2023-05-10T09:00:00Z"),
+        "updated_at": new Date("2023-05-10T09:00:00Z"),
+        "insert_time": new Date("2023-05-10T09:00:00Z")
+    },
+    {
+        "title": "新功能上线",
+        "remark": "我们很高兴地通知您，文件共享功能已正式上线，欢迎体验并提供反馈。",
+        "created_at": new Date("2023-05-15T10:30:00Z"),
+        "updated_at": new Date("2023-05-15T10:30:00Z"),
+        "insert_time": new Date("2023-05-15T10:30:00Z")
+    },
+    {
+        "title": "账户安全提醒",
+        "remark": "检测到您的账户在异地登录，如非本人操作，请立即修改密码。",
+        "created_at": new Date("2023-05-20T15:45:00Z"),
+        "updated_at": new Date("2023-05-20T15:45:00Z"),
+        "insert_time": new Date("2023-05-20T15:45:00Z")
+    },
+    {
+        "title": "问卷调查邀请",
+        "remark": "诚邀您参与用户体验问卷调查，完成问卷可获得100积分奖励。",
+        "created_at": new Date("2023-05-25T11:20:00Z"),
+        "updated_at": new Date("2023-05-25T11:20:00Z"),
+        "insert_time": new Date("2023-05-25T11:20:00Z")
+    },
+    {
+        "title": "节日祝福",
+        "remark": "祝您端午节安康！感谢您一直以来的支持与信任。",
+        "created_at": new Date("2023-06-01T08:00:00Z"),
+        "updated_at": new Date("2023-06-01T08:00:00Z"),
+        "insert_time": new Date("2023-06-01T08:00:00Z")
+    }
+]);
+
+//user_browse
+db.user_browse.insertMany([
+  {
+    video_id: "video001",
+    user_id: "user001",
+    created_at: ISODate("2025-06-09T12:00:00Z"),
+    updated_at: ISODate("2025-06-09T12:00:00Z"),
+    insert_time: Math.floor(Date.now() / 1000) // 当前时间戳（秒）
+  },
+  {
+    video_id: "video002",
+    user_id: "user002",
+    created_at: ISODate("2025-06-08T15:30:00Z"),
+    updated_at: ISODate("2025-06-08T15:30:00Z"),
+    insert_time: Math.floor(Date.now() / 1000) - 100000 // 模拟较早的时间
+  }
+]);
+
+
+//user_card
+db.user_card.insertMany([
+{
+    user_id: "user001",
+    card_name: "张三",
+    card_id_number: "110101199003074512",
+    card_status: 1,  // 审核通过
+    img1: "https://example.com/id/user001_front.jpg",
+    img2: "https://example.com/id/user001_back.jpg",
+    img3: "https://example.com/id/user001_handheld.jpg",
+    img4: "https://example.com/id/user001_extra.jpg",
+    created_at: ISODate("2025-06-10T08:00:00Z"),
+    updated_at: ISODate("2025-06-10T08:00:00Z"),
+    insert_time: Date.now()
+  },
+  {
+    user_id: "user002",
+    card_name: "李四",
+    card_id_number: "440101198812125678",
+    card_status: 0,  // 待审核
+    img1: "https://example.com/id/user002_front.jpg",
+    img2: "https://example.com/id/user002_back.jpg",
+    img3: "https://example.com/id/user002_handheld.jpg",
+    img4: "https://example.com/id/user002_extra.jpg",
+    created_at: ISODate("2025-06-09T14:30:00Z"),
+    updated_at: ISODate("2025-06-09T14:30:00Z"),
+    insert_time: Date.now()
+  }
+]);
+
+//user_check_in
+db.user_check_in.insertMany([
+  {
+    name: "第一天",
+    diamond_quantity: 10,
+    current: "zh",
+    status: 1,
+    weight: 1,
+    bg_img_url: "https://example.com/images/day1.png",
+    created_at: ISODate("2025-06-10T08:00:00Z"),
+    updated_at: ISODate("2025-06-10T08:00:00Z"),
+    insert_time: Date.now()
+  },
+  {
+    name: "第二天",
+    diamond_quantity: 15,
+    current: "zh",
+    status: 1,
+    weight: 2,
+    bg_img_url: "https://example.com/images/day2.png",
+    created_at: ISODate("2025-06-11T08:00:00Z"),
+    updated_at: ISODate("2025-06-11T08:00:00Z"),
+    insert_time:  Date.now()
+  }
+]);
+
+
+//user_ention
+db.user_ention.insertMany([
+{
+    user_id: "user123",
+    target_user_id: "user456",
+    attention_time: ISODate("2025-06-01T10:00:00Z"),
+    created_at:  ISODate("2025-06-01T10:00:00Z"),
+    updated_at:  ISODate("2025-06-01T10:00:00Z"),
+    user_info: null
+  },
+  {
+    user_id: "user789",
+    target_user_id: "user123",
+    attention_time:  ISODate("2025-06-01T10:00:00Z"),
+    created_at:  ISODate("2025-06-01T10:00:00Z"),
+    updated_at:  ISODate("2025-06-01T10:00:00Z"),
+    user_info: null
+  }
+]);
+
+//users
+db.users.insertMany([
+]);
+
+//user_vip
+db.user_vip.insertMany([
+{
+  "user_id": "1001",
+  "start_time": ISODate(  "2024-06-01T00:00:00Z" ),
+  "end_time": ISODate(  "2024-12-01T00:00:00Z" ),
+  "created_at": ISODate(  "2024-06-01T00:00:00Z" ),
+  "updated_at": ISODate(  "2024-06-01T00:00:00Z" ),
+  "type": 1
+},
+{
+  "user_id": "1002",
+  "start_time": ISODate(  "2024-05-15T12:00:00Z" ),
+  "end_time": ISODate(  "2025-05-15T12:00:00Z" ),
+  "created_at": ISODate(  "2024-05-15T12:00:00Z" ),
+  "updated_at": ISODate(  "2024-05-15T12:00:00Z" ),
+  "type": 2
+}
+
+]);
+
+//video_contest
+db.video_contest.insertMany([
+{
+  "type_name": "每日挑战赛",
+  "weight": 10,
+  "admin_id": "admin123",
+  "status": 1,
+  "created_at": ISODate(  "2024-06-01T09:00:00Z" ),
+  "updated_at": ISODate(  "2024-06-01T09:00:00Z" )
+},
+{
+  "type_name": "周末特别赛",
+  "weight": 8,
+  "admin_id": "admin456",
+  "status": 1,
+  "created_at": ISODate(  "2024-06-05T15:30:00Z" ),
+  "updated_at": ISODate(  "2024-06-05T15:30:00Z" )
+}
+
+]);
+
+//video_harbor
+db.video_harbor.insertMany([
+{
+  "video_id": "642e6b3fbcf86cd799439011",
+  "user_id": "1001",
+  "created_at": ISODate(  "2024-06-10T14:00:00Z" ),
+  "updated_at": ISODate(  "2024-06-10T14:00:00Z" ),
+  "insert_time": ISODate(  "2024-06-10T14:00:00Z" )
+},
+{
+  "video_id": "642e6b3fbcf86cd799439012",
+  "user_id": "1002",
+  "created_at": ISODate(  "2024-06-11T09:00:00Z" ),
+  "updated_at": ISODate(  "2024-06-11T09:00:00Z" ),
+  "insert_time": ISODate(  "2024-06-11T09:00:00Z" )
+}
+
+]);
+
+//video_like
+db.video_like.insertMany([
+{
+  "video_id": "642e6b3fbcf86cd799439011",
+  "user_id": "1001",
+  "created_at": ISODate(  "2024-06-10T12:00:00Z" ),
+  "updated_at": ISODate(  "2024-06-10T12:00:00Z" ),
+  "insert_time": ISODate(  "2024-06-10T12:00:00Z" )
+},
+{
+  "video_id": "642e6b3fbcf86cd799439011",
+  "user_id": "1002",
+  "created_at": ISODate(  "2024-06-11T08:30:00Z" ),
+  "updated_at": ISODate(  "2024-06-11T08:30:00Z" ),
+  "insert_time": ISODate(  "2024-06-11T08:30:00Z" )
+}
+
+]);
+
+//video
+db.video.insertMany([
+{
+  "video_url": "https://cdn.example.com/videos/video1.mp4",
+  "video_name": "夏日海滩",
+  "status": 1,
+  "play_number": 1200,
+  "hot_number": 300,
+  "look_number": 1100,
+  "dis_recommend": 5,
+  "recommend": 100,
+  "like": 250,
+  "admin_id": 10,
+  "created_at": ISODate(  "2024-06-01T08:00:00Z" ),
+  "updated_at": ISODate(  "2024-06-05T12:00:00Z" ),
+  "insert_time": ISODate(  "2024-06-01T08:00:01Z" ),
+  "weight": 5,
+  "user_id": 1001,
+  "remark": "风景优美的海滩视频",
+  "is_vip": 0,
+  "video_money": 0,
+  "paid_role": null,
+  "harbor": 30,
+  "is_original": 1,
+  "is_featured": 1,
+  "video_img": "https://cdn.example.com/images/video1_cover.jpg",
+  "video_tag": ["风景", "海滩", "夏日"],
+  "browse_number": 1500,
+  "ads_img": null,
+  "ads_url": null,
+  "video_type": "娱乐",
+  "video_contest_id": null
+},
+{
+  "video_url": "https://cdn.example.com/videos/video2.mp4",
+  "video_name": "VIP 专属教程",
+  "status": 1,
+  "play_number": 500,
+  "hot_number": 150,
+  "look_number": 480,
+  "dis_recommend": 0,
+  "recommend": 50,
+  "like": 120,
+  "admin_id": 12,
+  "created_at": ISODate(  "2024-06-02T09:30:00Z" ),
+  "updated_at": ISODate(  "2024-06-04T14:00:00Z" ),
+  "insert_time": ISODate(  "2024-06-02T09:30:01Z" ),
+  "weight": 10,
+  "user_id": 1002,
+  "remark": "会员专享内容",
+  "is_vip": 1,
+  "video_money": 20,
+  "paid_role": "vip",
+  "harbor": 100,
+  "is_original": 1,
+  "is_featured": 0,
+  "video_img": "https://cdn.example.com/images/video2_cover.jpg",
+  "video_tag": ["教程", "VIP"],
+  "browse_number": 600,
+  "ads_img": "https://cdn.example.com/ads/ad1.jpg",
+  "ads_url": "https://advertiser.example.com/click",
+  "video_type": "教育",
+  "video_contest_id": "contest_202406"
+}
+]);
+
+//video_nation
+db.video_nation.insertMany([
+{
+  "type_name": "中国",
+  "weight": 1,
+  "admin_id": 201,
+  "status": 1,
+  "created_at": ISODate(  "2024-06-01T10:00:00Z" ),
+  "updated_at": ISODate(  "2024-06-01T10:00:00Z" )
+},
+{
+  "type_name": "日本",
+  "weight": 2,
+  "admin_id": 202,
+  "status": 1,
+  "created_at": ISODate(  "2024-06-02T10:00:00Z" ),
+  "updated_at": ISODate(  "2024-06-02T10:00:00Z" )
+},
+{
+  "type_name": "欧美",
+  "weight": 3,
+  "admin_id": 203,
+  "status": 0,
+  "created_at": ISODate(  "2024-06-03T10:00:00Z" ),
+  "updated_at": ISODate(  "2024-06-03T10:00:00Z" )
+}
+
+]);
+
+//video_tag
+db.video_tag.insertMany([
+{
+  "type_name": "娱乐",
+  "weight": 1,
+  "admin_id": 101,
+  "status": 1,
+  "created_at": ISODate(  "2024-06-01T09:00:00Z" ),
+  "updated_at": ISODate(  "2024-06-01T09:00:00Z" )
+},
+{
+  "type_name": "教育",
+  "weight": 2,
+  "admin_id": 102,
+  "status": 1,
+  "created_at": ISODate(  "2024-06-02T10:00:00Z" ),
+  "updated_at": ISODate(  "2024-06-02T10:00:00Z" )
+},
+{
+  "type_name": "生活方式",
+  "weight": 3,
+  "admin_id": 103,
+  "status": 0,
+  "created_at": ISODate(  "2024-06-03T11:00:00Z" ),
+  "updated_at": ISODate(  "2024-06-03T11:00:00Z" )
+}
+
+]);
+
+//vip_log
+db.vip_log.insertMany([
+{
+  "user_id": 10001,
+  "vip_id": "vip_basic_001",
+  "type": 1,
+  "created_at": ISODate(  "2024-06-01T12:00:00Z" ),
+  "updated_at": ISODate(  "2024-06-01T12:00:00Z" ),
+  "insert_time": ISODate(  "2024-06-01T12:00:01Z" ),
+  "consumption": 100,
+  "vip_info": {
+    "name": "普通VIP",
+    "diamond_number": 100,
+    "share_number": 5,
+    "long_time": 0,
+    "remark": "基础 VIP",
+    "bg_img_url": "https://cdn.example.com/vip/basic_bg.png"
+  }
+},
+{
+  "user_id": 10002,
+  "vip_id": "vip_gold_002",
+  "type": 2,
+  "created_at": ISODate(  "2024-06-03T14:30:00Z" ),
+  "updated_at": ISODate(  "2024-06-03T14:30:00Z" ),
+  "insert_time": ISODate(  "2024-06-03T14:30:01Z" ),
+  "consumption": 10,
+  "vip_info": {
+    "name": "黄金VIP",
+    "diamond_number": 500,
+    "share_number": 10,
+    "long_time": 30,
+    "remark": "黄金 VIP 特权",
+    "bg_img_url": "https://cdn.example.com/vip/gold_bg.jpg"
+  }
+},
+{
+  "user_id": 10001,
+  "vip_id": "vip_black_003",
+  "type": 1,
+  "created_at": ISODate(  "2024-06-09T09:00:00Z" ),
+  "updated_at": ISODate(  "2024-06-09T09:00:00Z" ),
+  "insert_time": ISODate(  "2024-06-09T09:00:01Z" ),
+  "consumption": 1200,
+  "vip_info": {
+    "name": "黑钻VIP",
+    "diamond_number": 1200,
+    "share_number": 20,
+    "long_time": 90,
+    "remark": "最高级 VIP 等级",
+    "bg_img_url": "https://cdn.example.com/vip/black_diamond.png"
+  }
+}
+
+]);
+
+//vip
+db.vip.insertMany([
+{
+  "name": "普通VIP",
+  "diamond_number": 100,
+  "share_number": 5,
+  "created_at": ISODate(  "2024-06-01T08:00:00Z" ),
+  "updated_at": ISODate(  "2024-06-01T08:00:00Z" ),
+  "long_time": 0,
+  "weight": 1,
+  "remark": "基础 VIP，永久有效",
+  "bg_img_url": "https://cdn.example.com/vip/basic_bg.png"
+},
+{
+  "name": "黄金VIP",
+  "diamond_number": 500,
+  "share_number": 10,
+  "created_at": ISODate(  "2024-06-05T10:30:00Z" ),
+  "updated_at": ISODate(  "2024-06-05T10:30:00Z" ),
+  "long_time": 30,
+  "weight": 2,
+  "remark": "黄金会员，享受额外特权",
+  "bg_img_url": "https://cdn.example.com/vip/gold_bg.jpg"
+},
+{
+  "name": "黑钻VIP",
+  "diamond_number": 1200,
+  "share_number": 20,
+  "created_at": ISODate(  "2024-06-08T09:00:00Z" ),
+  "updated_at": ISODate(  "2024-06-08T09:00:00Z" ),
+  "long_time": 90,
+  "weight": 3,
+  "remark": "黑钻会员，享受全部高级权益",
+  "bg_img_url": "https://cdn.example.com/vip/black_diamond.png"
+}
+
+]);
+
+//wallet
+db.wallet.insertMany([
+{
+  "user_id": 10001,
+  "exchange_rate_id": "usd_to_diamond",
+  "exchange_rate": 10.0,
+  "remark": "用户充值 10 美元兑换钻石",
+  "recharge_amount": 10.00,
+  "payment_screenshot": "https://cdn.example.com/payments/sshot_10001.png",
+  "before_balance": 120,
+  "after_balance": 220,
+  "recharge_address": "wallet_abc123",
+  "created_at": ISODate(  "2024-06-10T10:00:00Z" ),
+  "updated_at": ISODate(  "2024-06-10T10:00:00Z" ),
+  "insert_time": ISODate(  "2024-06-10T10:00:01Z" ),
+  "operation_type": "recharge",
+  "diamonds_number": 100,
+  "exchange_rate_info": {
+    "currency": "USD",
+    "target": "diamond",
+    "rate": 10.0
+  }
+},
+{
+  "user_id": 10002,
+  "exchange_rate_id": "diamond_to_usdt",
+  "exchange_rate": 0.1,
+  "remark": "提现 100 钻石兑换 10 USDT",
+  "recharge_amount": 10.00,
+  "payment_screenshot": "https://cdn.example.com/payments/withdraw_10002.png",
+  "before_balance": 300,
+  "after_balance": 200,
+  "recharge_address": "usdt_wallet_xyz789",
+  "created_at": ISODate(  "2024-06-09T15:00:00Z" ),
+  "updated_at": ISODate(  "2024-06-09T15:00:00Z" ),
+  "insert_time": ISODate(  "2024-06-09T15:00:01Z" ),
+  "operation_type": "withdraw",
+  "diamonds_number": -100,
+  "exchange_rate_info": {
+    "currency": "diamond",
+    "target": "USDT",
+    "rate": 0.1
+  }
+},
+{
+  "user_id": 10003,
+  "exchange_rate_id": "sys_bonus",
+  "exchange_rate": 0,
+  "remark": "系统赠送新用户钻石",
+  "recharge_amount": 0,
+  "payment_screenshot": "",
+  "before_balance": 0,
+  "after_balance": 50,
+  "recharge_address": "system",
+  "created_at": ISODate(  "2024-06-01T08:00:00Z" ),
+  "updated_at": ISODate(  "2024-06-01T08:00:00Z" ),
+  "insert_time": ISODate(  "2024-06-01T08:00:01Z" ),
+  "operation_type": "gift",
+  "diamonds_number": 50,
+  "exchange_rate_info": {
+    "currency": "system",
+    "target": "diamond",
+    "rate": 0
+  }
+}
+
+]);
